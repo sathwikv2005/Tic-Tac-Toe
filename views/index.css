@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+	--silver: rgb(223, 218, 218);
+}
+
+body {
+	background: black;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.sour--gummy {
+	font-family: 'Sour Gummy', serif;
+}
+
+.inter {
+	font-family: 'Inter', serif;
+}
+
+.nav {
+	height: 100px;
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.nav--left {
+	width: 50%;
+	font-size: 50px;
+	letter-spacing: 5px;
+	padding: 10px 20px;
+}
+
+.nav--right {
+	display: flex;
+	width: 50%;
+	font-size: 20px;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 5px 20px;
+	margin-bottom: 25px;
+}
+
+.title:hover {
+	scale: 1.05;
+	transform: translate(15px, 0px);
+	color: red;
+}
+
+.nav--item:hover {
+	scale: 1.05;
+	transform: translate(-2px, -2px);
+	color: red;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 0px;
+}
+
+#turndiv {
+	font-size: 24px;
+}
+
+#turn {
+	color: red;
+}
+
+.board {
+	margin-top: 40px;
+	width: min(300px, 90vw);
+	aspect-ratio: 1/1;
+}
+
+.row {
+	height: min(100px, 30vw);
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.box {
+	font-family: 'Sour Gummy', serif;
+	width: calc(100% / 3);
+	aspect-ratio: 1/1;
+	background-color: black;
+	display: flex;
+	font-size: min(40px, 15vw);
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin: 0px;
+	transition: background-color 0.5s ease;
+}
+
+.box:hover {
+	background-color: red;
+	cursor: pointer;
+}
+
+.occupied:hover {
+	background-color: rgb(73, 73, 73);
+	cursor: not-allowed;
+}
+
+/* Shake Animation */
+@keyframes shake {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(5px);
+	}
+	50% {
+		transform: translateX(-5px);
+	}
+	75% {
+		transform: translateX(5px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/* Apply shake animation when clicked */
+.occupied:active {
+	animation: shake 0.5s linear;
+}
+
+/* Borders for inner grid lines */
+.box {
+	border: 5px solid transparent; /* Default to no visible borders */
+}
+
+/* Add borders only to inner boxes */
+.row .box:not(:last-child) {
+	border-right: 5px solid var(--silver); /* Vertical lines */
+}
+
+.board .row:not(:last-child) .box {
+	border-bottom: 5px solid var(--silver); /* Horizontal lines */
+}
+
+.reset {
+	margin-top: 50px;
+	width: 175px;
+	height: 60px;
+	font-size: 20px;
+	font-weight: 800;
+	background-color: #8a2908;
+	border: 8px solid #8a2908;
+	transition: all 0.3s ease;
+}
+
+.reset:hover {
+	background-color: black;
+	color: var(--silver);
+}
+
+.win--row {
+	position: relative;
+	color: red !important;
+}
+
+.win--row::after {
+	position: absolute;
+	content: '';
+	top: 50%;
+	width: 0;
+	height: 5px;
+	background-color: var(--silver);
+	animation: expandWidth 0.3s ease-out forwards;
+	border-radius: 3px;
+}
+
+@keyframes expandWidth {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+.win--col {
+	position: relative;
+	color: red !important;
+}
+.win--col::after {
+	position: absolute;
+	content: '';
+	left: 50%;
+	height: 0;
+	width: 5px;
+	background-color: var(--silver);
+	animation: expandHeight 0.3s ease-out forwards;
+	border-radius: 3px;
+}
+
+@keyframes expandHeight {
+	from {
+		height: 0;
+	}
+	to {
+		height: 130%;
+	}
+}
+
+.win--dia1 {
+	position: relative;
+	color: red !important;
+}
+.win--dia1::after {
+	position: absolute;
+	content: '';
+	left: 50%;
+	height: 0;
+	width: 5px;
+	background-color: var(--silver);
+	animation: expandDia 0.3s ease-out forwards;
+	transform: rotate(-45deg);
+	border-radius: 3px;
+}
+
+.win--dia2 {
+	position: relative;
+	color: red !important;
+}
+.win--dia2::after {
+	position: absolute;
+	content: '';
+	left: 50%;
+	height: 0;
+	width: 5px;
+	background-color: var(--silver);
+	animation: expandDia 0.3s ease-out forwards;
+	transform: rotate(45deg);
+	border-radius: 3px;
+}
+
+@keyframes expandDia {
+	from {
+		height: 0;
+	}
+	to {
+		height: 170%;
+	}
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	align-items: center;
+	font-family: 'Inter', sans-serif;
+	justify-content: center;
+	height: 30px;
+	font-size: 14px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tic Tac Toe</title>
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<div class="nav">
+			<div class="nav--left sour--gummy">
+				<a href="/"><div class="title">XO</div></a>
+			</div>
+			<div class="nav--right">
+				<div class="inter nav--item"><a class="nav--item" href="/github">GitHub</a></div>
+			</div>
+		</div>
+		<div class="container">
+			<div id="turndiv" class="inter">Turn: <span id="turn" class="sour--gummy">X</span></div>
+			<div class="board">
+				<div class="row row1">
+					<div id="box11" class="box"></div>
+					<div id="box12" class="box"></div>
+					<div id="box13" class="box"></div>
+				</div>
+				<div class="row row2">
+					<div id="box21" class="box"></div>
+					<div id="box22" class="box"></div>
+					<div id="box23" class="box"></div>
+				</div>
+				<div class="row row3">
+					<div id="box31" class="box"></div>
+					<div id="box32" class="box"></div>
+					<div id="box33" class="box"></div>
+				</div>
+			</div>
+			<div class="control">
+				<button class="reset" onclick="reset()">Reset</button>
+			</div>
+		</div>
+		<footer class="footer"></footer>
+	</body>
+	<script src="index.js"></script>
+</html>
