@@ -1,58 +1,55 @@
 # Tic-Tac-Toe
 
-A simple yet engaging Tic-Tac-Toe game with both **Local Multiplayer** and **Online Multiplayer** modes. Play with a friend on the same device or challenge opponents online!
+Tic-Tac-Toe is a simple yet fun game that supports both local and online multiplayer modes. Play with your friends or challenge an opponent online!
 
 ## Features
 
-- 🎮 **Local Multiplayer:** Play against a friend on the same device.
-- 🌍 **Online Multiplayer:** Create or join rooms and compete with players online.
-- 🎨 **Sleek UI:** Simple and intuitive interface for an enjoyable experience.
-- ⚡ **Real-time Gameplay:** Powered by **Socket.IO** for seamless online interaction.
-- 📊 **Win Tracking:** Keep track of wins for both players in online mode.
-
-## Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js, Express, Socket.IO
-- **Database:** MongoDB (for storing game data and rooms)
+- **Local Multiplayer:** Play with a friend on the same device.
+- **Online Multiplayer:** Connect with players online using WebSockets.
+- **Real-time Gameplay:** Smooth, real-time moves using Socket.io.
+- **Persistent Game State:** Game data is stored in MongoDB.
 
 ## Installation
 
-### Clone the Repository
+### Prerequisites
 
-```sh
-git https://github.com/sathwikv2005/Tic-Tac-Toe.git
-cd Tic-Tac-Toe
-```
+Make sure you have the following installed:
 
-### Install Dependencies
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
 
-```sh
-npm install
-```
+### Steps
 
-### Start the Server
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/sathwikv2005/Tic-Tac-Toe.git
+   cd Tic-Tac-Toe
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create a `.env` file in the root directory and add your MongoDB connection string:
+   ```sh
+   MONGOURI=your_mongo_connection_string
+   ```
+4. Start the server:
+   ```sh
+   npm start
+   ```
+5. Open the frontend in your browser:
+   ```
+   http://localhost:6700
+   ```
 
-```sh
-npm start
-(or)
-node index.js
-```
+## Usage
 
-### Run the Frontend (if applicable)
+- Open the game and select **Local PvP** to play with a friend on the same device.
+- Select **Online PvP**, enter a room ID, and share it with a friend to play online.
 
-Serve the `index.html` file through a local server or open it directly in the browser.
+## Technologies Used
 
-## How to Play
-
-### Local Multiplayer
-
-1. Open the game in a browser.
-2. Click on a box to make a move.
-3. Players take turns until one wins or the board is full.
-
-### Online Multiplayer
-
-1. One player creates a room.
-2. The second player joins using the room ID.
-3. Players take turns until a winner is determined.
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Real-time Communication:** Socket.io
