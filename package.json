@@ -1,15 +1,19 @@
 {
-  "name": "tic-tac-toe",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Sathwikv2005",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2"
-  }
+	"name": "tic-tac-toe",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"author": "Sathwikv2005",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"cookie-parser": "^1.4.7",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"mongoose": "^8.10.1",
+		"socket.io": "^4.8.1"
+	}
 }

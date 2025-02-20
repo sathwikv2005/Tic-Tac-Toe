@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/index.css" />
+		<title>Tic Tac Toe | Online PvP</title>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="nav--left sour--gummy">
+				<a href="/"><div class="title">XO</div></a>
+			</div>
+			<div class="nav--right">
+				<div class="inter nav--item">
+					<a class="nav--item" href="/">Local PvP</a>
+				</div>
+				<div class="inter nav--item">
+					<a class="nav--item" href="/pvp">Online PvP</a>
+				</div>
+				<div class="inter nav--item">
+					<a class="nav--item" href="https://github.com/sathwikv2005/Tic-Tac-Toe">GitHub</a>
+				</div>
+			</div>
+		</div>
+		<div class="pvp--container">
+			<div class="inputs">
+				<input
+					id="pvpUserName"
+					class="pvp--input sour--gummy"
+					placeholder="User Name"
+					pattern="[a-zA-Z0-9_]*"
+					title="Only letters, numbers, and underscores allowed"
+					oninput="this.value = this.value.replace(/[^a-zA-Z0-9_]/g, '')"
+				/>
+				<input
+					id="roomID"
+					class="pvp--input sour--gummy"
+					placeholder="Room ID"
+					pattern="[a-zA-Z0-9]*"
+					title="Only letters and numbers allowed"
+					oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '')"
+				/>
+			</div>
+			<div class="pvp--btns">
+				<button class="pvp--btn inter" onclick="join()">Join Game</button>
+				<button class="pvp--btn inter" onclick="create()">Create Game</button>
+			</div>
+		</div>
+	</body>
+	<script src="pvp.js"></script>
+</html>
