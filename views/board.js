@@ -70,7 +70,7 @@ socket.on('gameState', (data) => {
 		document.getElementById('player2').classList.add('active')
 	}
 	gameOver = data.winner ? true : false
-	if (!gameOver) resetBtn.style.display = 'none'
+	if (userName == player2) resetBtn.style.display = 'none'
 	updateBoardUI(data.board)
 })
 

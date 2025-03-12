@@ -93,7 +93,7 @@ function setupSocket(server) {
 			if (!gameData) return socket.emit('message', 'Game not found.')
 
 			if (gameData.player1 !== userName)
-				return socket.emit('message', 'Only player1 can reset the game.')
+				return socket.emit('message', `Only ${gameData.player1} can reset the game.`)
 
 			gameData.board = Array(9).fill(null)
 			gameData.turn = gameData.player1
